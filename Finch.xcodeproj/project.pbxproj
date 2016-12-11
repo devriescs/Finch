@@ -9,10 +9,21 @@
 /* Begin PBXBuildFile section */
 		7A420C49412B702213A0D34E /* libPods-Finch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE192EF178EC387936896DB4 /* libPods-Finch.a */; };
 		FE09B1AF1DFD54D400714D15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09B1AE1DFD54D400714D15 /* AppDelegate.swift */; };
-		FE09B1B11DFD54D400714D15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09B1B01DFD54D400714D15 /* ViewController.swift */; };
 		FE09B1B41DFD54D400714D15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09B1B21DFD54D400714D15 /* Main.storyboard */; };
 		FE09B1B61DFD54D400714D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE09B1B51DFD54D400714D15 /* Assets.xcassets */; };
 		FE09B1B91DFD54D400714D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE09B1B71DFD54D400714D15 /* LaunchScreen.storyboard */; };
+		FE9BDA4F1DFD59D200BFDD6F /* LFLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA4E1DFD59D200BFDD6F /* LFLoginViewController.swift */; };
+		FE9BDA531DFD5A0400BFDD6F /* LFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA521DFD5A0400BFDD6F /* LFBaseViewController.swift */; };
+		FE9BDA571DFD5A2000BFDD6F /* LFRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA561DFD5A2000BFDD6F /* LFRoomsViewController.swift */; };
+		FE9BDA591DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA581DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift */; };
+		FE9BDA5B1DFD5A3600BFDD6F /* LFRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA5A1DFD5A3600BFDD6F /* LFRoomViewController.swift */; };
+		FE9BDA5E1DFD5A6200BFDD6F /* LFConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA5D1DFD5A6200BFDD6F /* LFConstants.swift */; };
+		FE9BDA601DFD5A7200BFDD6F /* LFAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA5F1DFD5A7200BFDD6F /* LFAPIManager.swift */; };
+		FE9BDA651DFD5AFD00BFDD6F /* SpotifyAudioPlayback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA621DFD5AFD00BFDD6F /* SpotifyAudioPlayback.framework */; };
+		FE9BDA661DFD5AFD00BFDD6F /* SpotifyAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA631DFD5AFD00BFDD6F /* SpotifyAuthentication.framework */; };
+		FE9BDA671DFD5AFD00BFDD6F /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA641DFD5AFD00BFDD6F /* SpotifyMetadata.framework */; };
+		FE9BDA6A1DFD5E7F00BFDD6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA691DFD5E7F00BFDD6F /* AVFoundation.framework */; };
+		FE9BDA6C1DFD5E8600BFDD6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA6B1DFD5E8600BFDD6F /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +32,23 @@
 		DE192EF178EC387936896DB4 /* libPods-Finch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Finch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE09B1AB1DFD54D400714D15 /* Finch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE09B1AE1DFD54D400714D15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FE09B1B01DFD54D400714D15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE09B1B31DFD54D400714D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE09B1B51DFD54D400714D15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE09B1B81DFD54D400714D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE09B1BA1DFD54D400714D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE9BDA4E1DFD59D200BFDD6F /* LFLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFLoginViewController.swift; sourceTree = "<group>"; };
+		FE9BDA521DFD5A0400BFDD6F /* LFBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFBaseViewController.swift; sourceTree = "<group>"; };
+		FE9BDA561DFD5A2000BFDD6F /* LFRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRoomsViewController.swift; sourceTree = "<group>"; };
+		FE9BDA581DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFCreateRoomViewController.swift; sourceTree = "<group>"; };
+		FE9BDA5A1DFD5A3600BFDD6F /* LFRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRoomViewController.swift; sourceTree = "<group>"; };
+		FE9BDA5D1DFD5A6200BFDD6F /* LFConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFConstants.swift; sourceTree = "<group>"; };
+		FE9BDA5F1DFD5A7200BFDD6F /* LFAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFAPIManager.swift; sourceTree = "<group>"; };
+		FE9BDA621DFD5AFD00BFDD6F /* SpotifyAudioPlayback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAudioPlayback.framework; sourceTree = "<group>"; };
+		FE9BDA631DFD5AFD00BFDD6F /* SpotifyAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyAuthentication.framework; sourceTree = "<group>"; };
+		FE9BDA641DFD5AFD00BFDD6F /* SpotifyMetadata.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyMetadata.framework; sourceTree = "<group>"; };
+		FE9BDA681DFD5C5F00BFDD6F /* Finch-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Finch-Briding-Header.h"; sourceTree = "<group>"; };
+		FE9BDA691DFD5E7F00BFDD6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FE9BDA6B1DFD5E8600BFDD6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +56,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9BDA6C1DFD5E8600BFDD6F /* SystemConfiguration.framework in Frameworks */,
+				FE9BDA6A1DFD5E7F00BFDD6F /* AVFoundation.framework in Frameworks */,
+				FE9BDA671DFD5AFD00BFDD6F /* SpotifyMetadata.framework in Frameworks */,
 				7A420C49412B702213A0D34E /* libPods-Finch.a in Frameworks */,
+				FE9BDA661DFD5AFD00BFDD6F /* SpotifyAuthentication.framework in Frameworks */,
+				FE9BDA651DFD5AFD00BFDD6F /* SpotifyAudioPlayback.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +71,8 @@
 		B82917D93AFC5916769D037D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BDA6B1DFD5E8600BFDD6F /* SystemConfiguration.framework */,
+				FE9BDA691DFD5E7F00BFDD6F /* AVFoundation.framework */,
 				DE192EF178EC387936896DB4 /* libPods-Finch.a */,
 			);
 			name = Frameworks;
@@ -78,14 +108,40 @@
 		FE09B1AD1DFD54D400714D15 /* Finch */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BDA611DFD5AD600BFDD6F /* Frameworks */,
+				FE9BDA5C1DFD5A4C00BFDD6F /* ViewControllers */,
 				FE09B1AE1DFD54D400714D15 /* AppDelegate.swift */,
-				FE09B1B01DFD54D400714D15 /* ViewController.swift */,
 				FE09B1B21DFD54D400714D15 /* Main.storyboard */,
 				FE09B1B51DFD54D400714D15 /* Assets.xcassets */,
 				FE09B1B71DFD54D400714D15 /* LaunchScreen.storyboard */,
 				FE09B1BA1DFD54D400714D15 /* Info.plist */,
+				FE9BDA5D1DFD5A6200BFDD6F /* LFConstants.swift */,
+				FE9BDA5F1DFD5A7200BFDD6F /* LFAPIManager.swift */,
+				FE9BDA681DFD5C5F00BFDD6F /* Finch-Briding-Header.h */,
 			);
 			path = Finch;
+			sourceTree = "<group>";
+		};
+		FE9BDA5C1DFD5A4C00BFDD6F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FE9BDA4E1DFD59D200BFDD6F /* LFLoginViewController.swift */,
+				FE9BDA521DFD5A0400BFDD6F /* LFBaseViewController.swift */,
+				FE9BDA561DFD5A2000BFDD6F /* LFRoomsViewController.swift */,
+				FE9BDA581DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift */,
+				FE9BDA5A1DFD5A3600BFDD6F /* LFRoomViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FE9BDA611DFD5AD600BFDD6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE9BDA621DFD5AFD00BFDD6F /* SpotifyAudioPlayback.framework */,
+				FE9BDA631DFD5AFD00BFDD6F /* SpotifyAuthentication.framework */,
+				FE9BDA641DFD5AFD00BFDD6F /* SpotifyMetadata.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +268,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE09B1B11DFD54D400714D15 /* ViewController.swift in Sources */,
+				FE9BDA5E1DFD5A6200BFDD6F /* LFConstants.swift in Sources */,
+				FE9BDA591DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift in Sources */,
+				FE9BDA531DFD5A0400BFDD6F /* LFBaseViewController.swift in Sources */,
+				FE9BDA4F1DFD59D200BFDD6F /* LFLoginViewController.swift in Sources */,
+				FE9BDA601DFD5A7200BFDD6F /* LFAPIManager.swift in Sources */,
+				FE9BDA5B1DFD5A3600BFDD6F /* LFRoomViewController.swift in Sources */,
 				FE09B1AF1DFD54D400714D15 /* AppDelegate.swift in Sources */,
+				FE9BDA571DFD5A2000BFDD6F /* LFRoomsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,10 +398,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6DDB3YQ38L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Finch",
+				);
 				INFOPLIST_FILE = Finch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.wrappic.Finch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finch/Finch-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -350,10 +417,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6DDB3YQ38L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Finch",
+				);
 				INFOPLIST_FILE = Finch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.wrappic.Finch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Finch/Finch-Briding-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -377,6 +449,7 @@
 				FE09B1BF1DFD54D400714D15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

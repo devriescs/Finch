@@ -9,14 +9,42 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingDelegate {
 
     var window: UIWindow?
-
+    
+    var auth: SPTAuth?
+    var player: SPTAudioStreamingController?
+    var authViewController: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.auth = SPTAuth.defaultInstance()
+        self.player = SPTAudioStreamingController.sharedInstance()
+        
+        self.auth?.clientID = ""
+        self.auth?.redirectURL = URL.init(string: "")
+        
+        self.auth?.sessionUserDefaultsKey = LFConstants.SPOTIFY_SESSION_KEY
+        self.auth?.requestedScopes = [SPTAuthStreamingScope]
+        
+        self.player?.delegate = self
+        do {
+            try self.player?.start(withClientId: self.auth?.clientID)
+            
+        } catch let error as Error {
+            print("ERROR: There was a problem starting the Spotify SDK")
+        }
+        
+        DispatchQueue.main.async {
+            self.startAuthFlow()
+        }
+        
         return true
+    }
+    
+    func startAuthFlow() {
+    
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
