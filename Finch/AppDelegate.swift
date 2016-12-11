@@ -20,24 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
 //        FIRApp.configure()
-        
+        self.auth = SPTAuth.defaultInstance()
 
-        
-        
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if (SPTAuth.defaultInstance().canHandle(url)) {
-            
-            NotificationCenter.default.post(name: Notification.Name("handleSpotifyLogin"), object: nil)
-            
-            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
+        if (self.auth?.canHandle(url))! {
+
+            self.auth?.handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
                 
                 if session != nil {
                     print("Found a session")
-                    SPTAudioStreamingController.sharedInstance().login(withAccessToken: self.auth?.session.accessToken)
+                    
+                    // Save the session?
+                    
+                    NotificationCenter.default.post(name: Notification.Name("handleSpotifyLogin"), object: nil)
+                    
                 }
 
             })

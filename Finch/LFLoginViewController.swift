@@ -11,13 +11,16 @@ import UIKit
 
 class LFLoginViewController: UIViewController, SPTAudioStreamingDelegate {
     
+    var player: SPTAudioStreamingController?
+    
     var auth: SPTAuth?
     var authViewController: UIViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        SPTAudioStreamingController.sharedInstance().delegate = self
+        
+        self.player = SPTAudioStreamingController.sharedInstance()
+        self.player?.delegate = self
         
         self.auth = SPTAuth.defaultInstance()
         
@@ -32,18 +35,16 @@ class LFLoginViewController: UIViewController, SPTAudioStreamingDelegate {
     
     func handleSpotifyLogin() {
         self.authViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        
-        SPTAudioStreamingController.sharedInstance().login(withAccessToken: self.auth?.session.accessToken)
+        self.loginPlayer()
     }
     
-    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
-        print("Audio streaming did login")
+    
+    
+    func loginPlayer() {
         
-//        SPTAudioStreamingController.sharedInstance().playSpotifyURI("spotify:track:58s6EuEYJdlb0kO7awm3Vp", startingWith: 0, startingWithPosition: 0, callback: { (error: Error?) in
-//            if error != nil {
-//                print("ERROR: *** failed to play")
-//            }
-//        })
+        DispatchQueue.main.async {
+            self.player?.login(withAccessToken: self.auth?.session.accessToken)
+        }
     }
     
     func startAuthFlow() {
@@ -51,7 +52,8 @@ class LFLoginViewController: UIViewController, SPTAudioStreamingDelegate {
         if let session = self.auth?.session {
             if session.isValid() {
                 print("Session valid: start player login")
-                SPTAudioStreamingController.sharedInstance().login(withAccessToken: self.auth?.session.accessToken)
+                self.loginPlayer()
+                
             } else {
                 self.openAuthViewController()
             }

@@ -7,3 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
+class LFRoomsViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
