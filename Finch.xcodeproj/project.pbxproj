@@ -28,9 +28,10 @@
 		FE9BDA701DFD685700BFDD6F /* LFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */; };
 		FE9BDA721DFD689100BFDD6F /* LFPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */; };
 		FE9BDA741DFD926300BFDD6F /* LFMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA731DFD926300BFDD6F /* LFMainViewController.swift */; };
-		FE9BDA781DFD95A500BFDD6F /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA771DFD95A500BFDD6F /* Playlist.swift */; };
 		FE9BDA7A1DFD95B600BFDD6F /* LFPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA791DFD95B600BFDD6F /* LFPlaylistViewController.swift */; };
 		FE9BDA7C1DFD966600BFDD6F /* LFPlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA7B1DFD966600BFDD6F /* LFPlaylistCell.swift */; };
+		FE9BDA821DFDB34600BFDD6F /* LFRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA811DFDB34600BFDD6F /* LFRoom.swift */; };
+		FE9BDA841DFDB35600BFDD6F /* LFPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA831DFDB35600BFDD6F /* LFPlaylist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,9 +61,10 @@
 		FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayer.swift; sourceTree = "<group>"; };
 		FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayerDelegate.swift; sourceTree = "<group>"; };
 		FE9BDA731DFD926300BFDD6F /* LFMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFMainViewController.swift; sourceTree = "<group>"; };
-		FE9BDA771DFD95A500BFDD6F /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		FE9BDA791DFD95B600BFDD6F /* LFPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaylistViewController.swift; sourceTree = "<group>"; };
 		FE9BDA7B1DFD966600BFDD6F /* LFPlaylistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaylistCell.swift; sourceTree = "<group>"; };
+		FE9BDA811DFDB34600BFDD6F /* LFRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFRoom.swift; sourceTree = "<group>"; };
+		FE9BDA831DFDB35600BFDD6F /* LFPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlaylist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		FE09B1AD1DFD54D400714D15 /* Finch */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BDA7E1DFDB33100BFDD6F /* Models */,
 				FE9BDA7D1DFD966B00BFDD6F /* Views */,
 				FE9BDA6D1DFD64D200BFDD6F /* GoogleService-Info.plist */,
 				FE9BDA611DFD5AD600BFDD6F /* Frameworks */,
@@ -136,7 +139,6 @@
 				FE9BDA681DFD5C5F00BFDD6F /* Finch-Briding-Header.h */,
 				FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */,
 				FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */,
-				FE9BDA771DFD95A500BFDD6F /* Playlist.swift */,
 			);
 			path = Finch;
 			sourceTree = "<group>";
@@ -171,6 +173,15 @@
 				FE9BDA7B1DFD966600BFDD6F /* LFPlaylistCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		FE9BDA7E1DFDB33100BFDD6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE9BDA811DFDB34600BFDD6F /* LFRoom.swift */,
+				FE9BDA831DFDB35600BFDD6F /* LFPlaylist.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,13 +310,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE9BDA5E1DFD5A6200BFDD6F /* LFConstants.swift in Sources */,
-				FE9BDA781DFD95A500BFDD6F /* Playlist.swift in Sources */,
 				FE9BDA591DFD5A2A00BFDD6F /* LFCreateRoomViewController.swift in Sources */,
 				FE9BDA531DFD5A0400BFDD6F /* LFBaseViewController.swift in Sources */,
 				FE9BDA4F1DFD59D200BFDD6F /* LFLoginViewController.swift in Sources */,
 				FE9BDA601DFD5A7200BFDD6F /* LFAPIManager.swift in Sources */,
+				FE9BDA821DFDB34600BFDD6F /* LFRoom.swift in Sources */,
 				FE9BDA701DFD685700BFDD6F /* LFPlayer.swift in Sources */,
 				FE9BDA5B1DFD5A3600BFDD6F /* LFRoomViewController.swift in Sources */,
+				FE9BDA841DFDB35600BFDD6F /* LFPlaylist.swift in Sources */,
 				FE9BDA741DFD926300BFDD6F /* LFMainViewController.swift in Sources */,
 				FE9BDA721DFD689100BFDD6F /* LFPlayerDelegate.swift in Sources */,
 				FE09B1AF1DFD54D400714D15 /* AppDelegate.swift in Sources */,

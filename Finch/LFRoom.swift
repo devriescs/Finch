@@ -1,5 +1,5 @@
 //
-//  Playlist.swift
+//  LFRoom.swift
 //  Finch
 //
 //  Created by Maarten de Vries on 11-12-16.

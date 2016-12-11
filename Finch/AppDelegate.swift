@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    
+    var ref: FIRDatabaseReference!
     
     var auth: SPTAuth?
     var player: SPTAudioStreamingController?
     var authViewController: UIViewController?
+    
+    let locationManager = CLLocationManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,6 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = mainNavController
         }
         
+        if CLLocationManager.locationServicesEnabled() {
+            self.locationManager.delegate = self
+            self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            self.locationManager.startUpdatingLocation()
+        }
+        
+        self.ref = FIRDatabase.database().reference()
+        
         self.window?.makeKeyAndVisible()
 
         return true
@@ -48,10 +61,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        
-        
         let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         return handled
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+//        self.ref.child("users").child(user.uid).setValue(["username": ""])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
