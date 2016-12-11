@@ -9,10 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="GDz-LY-cXr">
+            <objects>
+                <viewController storyboardIdentifier="mainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GjA-Nr-bE4" customClass="LFMainViewController" customModule="Finch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hrF-Ly-atb"/>
+                        <viewControllerLayoutGuide type="bottom" id="4NY-cD-wGW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uNJ-B3-pdQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTc-aV-RyJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="80"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LFLoginViewController" customModule="Finch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LFLoginViewController" customModule="Finch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,24 +38,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrR-fa-l3I">
-                                <rect key="frame" x="115" y="318" width="144" height="30"/>
-                                <state key="normal" title="Connect with Spotify"/>
-                                <connections>
-                                    <action selector="connectWithSpotifyButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ys6-7M-Pyv"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="0.2225429411" blue="0.41750263720000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="IrR-fa-l3I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LZl-nk-oJr"/>
-                            <constraint firstItem="IrR-fa-l3I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gVF-Pj-Mmn"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-710" y="80"/>
         </scene>
     </scenes>
 </document>

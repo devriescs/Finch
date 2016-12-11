@@ -22,12 +22,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if let token = FBSDKAccessToken.current() {
+            // There is a acces token
+            
+            // Check spotify session
+            
+            let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainViewController")
+            let mainNavController = UINavigationController.init(rootViewController: mainVC)
+            self.window?.rootViewController = mainNavController
+            
+        } else {
+            let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
+            self.window?.rootViewController = loginVC
+        }
+        
+        self.window?.makeKeyAndVisible()
 
         return true
     }
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        
         
         let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         return handled

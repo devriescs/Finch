@@ -19,18 +19,13 @@ class LFLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let token = FBSDKAccessToken.current() {
-            // There is a acces token
-        }
-        
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginButton.delegate = self
         
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
-        
-        
+
     }
     
     /* MARK: Facebook login button delegate */
