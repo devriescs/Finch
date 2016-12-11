@@ -13,4 +13,6 @@
 #import <SpotifyAudioPlayback/SpotifyAudioPlayback.h>
 #import <SafariServices/SafariServices.h>
 
+#import <Firebase/Firebase.h>
+
 #endif /* Finch_Briding_Header_h */

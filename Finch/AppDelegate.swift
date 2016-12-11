@@ -19,32 +19,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingDelegate
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        FIRApp.configure()
+        
         self.auth = SPTAuth.defaultInstance()
+        
         self.player = SPTAudioStreamingController.sharedInstance()
-        
-        self.auth?.clientID = ""
-        self.auth?.redirectURL = URL.init(string: "")
-        
-        self.auth?.sessionUserDefaultsKey = LFConstants.SPOTIFY_SESSION_KEY
-        self.auth?.requestedScopes = [SPTAuthStreamingScope]
-        
         self.player?.delegate = self
-        do {
-            try self.player?.start(withClientId: self.auth?.clientID)
-            
-        } catch let error as Error {
-            print("ERROR: There was a problem starting the Spotify SDK")
-        }
-        
+
         DispatchQueue.main.async {
-            self.startAuthFlow()
+            
         }
         
         return true
     }
     
-    func startAuthFlow() {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if (self.auth?.canHandle(url))! {
+            self.authViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            self.authViewController = nil
+            
+            self.auth?.handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
+                
+                if session != nil {
+                    self.player?.login(withAccessToken: self.auth?.session.accessToken)
+                }
+
+            })
+            
+            return true
+        }
+        
+        return false
+    }
     
+    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
+        
+        self.player?.playSpotifyURI("", startingWith: 0, startingWithPosition: 0, callback: { (error: Error?) in
+            if error != nil {
+                print("ERROR: *** failed to play")
+            }
+        })
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

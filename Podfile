@@ -5,5 +5,7 @@
 
 target 'Finch' do
 
+pod 'Firebase/Core'
+
 end
 

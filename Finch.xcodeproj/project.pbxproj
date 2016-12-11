@@ -24,6 +24,9 @@
 		FE9BDA671DFD5AFD00BFDD6F /* SpotifyMetadata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA641DFD5AFD00BFDD6F /* SpotifyMetadata.framework */; };
 		FE9BDA6A1DFD5E7F00BFDD6F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA691DFD5E7F00BFDD6F /* AVFoundation.framework */; };
 		FE9BDA6C1DFD5E8600BFDD6F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE9BDA6B1DFD5E8600BFDD6F /* SystemConfiguration.framework */; };
+		FE9BDA6E1DFD64D200BFDD6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE9BDA6D1DFD64D200BFDD6F /* GoogleService-Info.plist */; };
+		FE9BDA701DFD685700BFDD6F /* LFPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */; };
+		FE9BDA721DFD689100BFDD6F /* LFPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		FE9BDA681DFD5C5F00BFDD6F /* Finch-Briding-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Finch-Briding-Header.h"; sourceTree = "<group>"; };
 		FE9BDA691DFD5E7F00BFDD6F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FE9BDA6B1DFD5E8600BFDD6F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FE9BDA6D1DFD64D200BFDD6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayer.swift; sourceTree = "<group>"; };
+		FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFPlayerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		FE09B1AD1DFD54D400714D15 /* Finch */ = {
 			isa = PBXGroup;
 			children = (
+				FE9BDA6D1DFD64D200BFDD6F /* GoogleService-Info.plist */,
 				FE9BDA611DFD5AD600BFDD6F /* Frameworks */,
 				FE9BDA5C1DFD5A4C00BFDD6F /* ViewControllers */,
 				FE09B1AE1DFD54D400714D15 /* AppDelegate.swift */,
@@ -118,6 +125,8 @@
 				FE9BDA5D1DFD5A6200BFDD6F /* LFConstants.swift */,
 				FE9BDA5F1DFD5A7200BFDD6F /* LFAPIManager.swift */,
 				FE9BDA681DFD5C5F00BFDD6F /* Finch-Briding-Header.h */,
+				FE9BDA6F1DFD685700BFDD6F /* LFPlayer.swift */,
+				FE9BDA711DFD689100BFDD6F /* LFPlayerDelegate.swift */,
 			);
 			path = Finch;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE09B1B91DFD54D400714D15 /* LaunchScreen.storyboard in Resources */,
+				FE9BDA6E1DFD64D200BFDD6F /* GoogleService-Info.plist in Resources */,
 				FE09B1B61DFD54D400714D15 /* Assets.xcassets in Resources */,
 				FE09B1B41DFD54D400714D15 /* Main.storyboard in Resources */,
 			);
@@ -273,7 +283,9 @@
 				FE9BDA531DFD5A0400BFDD6F /* LFBaseViewController.swift in Sources */,
 				FE9BDA4F1DFD59D200BFDD6F /* LFLoginViewController.swift in Sources */,
 				FE9BDA601DFD5A7200BFDD6F /* LFAPIManager.swift in Sources */,
+				FE9BDA701DFD685700BFDD6F /* LFPlayer.swift in Sources */,
 				FE9BDA5B1DFD5A3600BFDD6F /* LFRoomViewController.swift in Sources */,
+				FE9BDA721DFD689100BFDD6F /* LFPlayerDelegate.swift in Sources */,
 				FE09B1AF1DFD54D400714D15 /* AppDelegate.swift in Sources */,
 				FE9BDA571DFD5A2000BFDD6F /* LFRoomsViewController.swift in Sources */,
 			);
