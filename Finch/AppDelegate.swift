@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
@@ -21,28 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingDelegate
         
 //        FIRApp.configure()
         
-        self.auth = SPTAuth.defaultInstance()
-        
-        self.player = SPTAudioStreamingController.sharedInstance()
-        self.player?.delegate = self
 
-        DispatchQueue.main.async {
-            
-        }
+        
         
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if (self.auth?.canHandle(url))! {
-            self.authViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-            self.authViewController = nil
+        if (SPTAuth.defaultInstance().canHandle(url)) {
             
-            self.auth?.handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
+            NotificationCenter.default.post(name: Notification.Name("handleSpotifyLogin"), object: nil)
+            
+            SPTAuth.defaultInstance().handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
                 
                 if session != nil {
-                    self.player?.login(withAccessToken: self.auth?.session.accessToken)
+                    print("Found a session")
+                    SPTAudioStreamingController.sharedInstance().login(withAccessToken: self.auth?.session.accessToken)
                 }
 
             })
@@ -51,15 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingDelegate
         }
         
         return false
-    }
-    
-    func audioStreamingDidLogin(_ audioStreaming: SPTAudioStreamingController!) {
-        
-        self.player?.playSpotifyURI("", startingWith: 0, startingWithPosition: 0, callback: { (error: Error?) in
-            if error != nil {
-                print("ERROR: *** failed to play")
-            }
-        })
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

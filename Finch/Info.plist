@@ -25,7 +25,7 @@
 			<string>nl.finch.spotify-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>finch://</string>
+				<string>finch</string>
 			</array>
 		</dict>
 	</array>
