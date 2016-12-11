@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LFLoginViewController: UIViewController, SPTAudioStreamingDelegate {
+class LFLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     var player: SPTAudioStreamingController?
     
@@ -19,61 +19,36 @@ class LFLoginViewController: UIViewController, SPTAudioStreamingDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.player = SPTAudioStreamingController.sharedInstance()
-        self.player?.delegate = self
-        
-        self.auth = SPTAuth.defaultInstance()
-        
-        self.auth?.clientID = "64b0170389324644ba6527eac1ff0af3"
-        self.auth?.redirectURL = URL.init(string: "finch://")
-        
-        self.auth?.sessionUserDefaultsKey = LFConstants.SPOTIFY_SESSION_KEY
-        self.auth?.requestedScopes = [SPTAuthStreamingScope]
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(LFLoginViewController.handleSpotifyLogin), name: Notification.Name("handleSpotifyLogin"), object: nil)
-    }
-    
-    func handleSpotifyLogin() {
-        self.authViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        self.loginPlayer()
-    }
-    
-    
-    
-    func loginPlayer() {
-        
-        DispatchQueue.main.async {
-            self.player?.login(withAccessToken: self.auth?.session.accessToken)
+        if let token = FBSDKAccessToken.current() {
+            // There is a acces token
         }
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        loginButton.delegate = self
+        
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
+        
+        
     }
     
-    func startAuthFlow() {
+    /* MARK: Facebook login button delegate */
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
-        if let session = self.auth?.session {
-            if session.isValid() {
-                print("Session valid: start player login")
-                self.loginPlayer()
-                
-            } else {
-                self.openAuthViewController()
+        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            // ...
+            if let error = error {
+                // ...
+                return
             }
-        } else {
-            self.openAuthViewController()
         }
     }
-    
-    @IBAction func connectWithSpotifyButtonPressed(_ sender: Any) {
-        print("Connect with spotify")
-        DispatchQueue.main.async {
-             self.startAuthFlow()
-        }
-       
+
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        //
     }
     
-    func openAuthViewController() {
-        let authUrl = self.auth?.spotifyWebAuthenticationURL()
-        self.authViewController = SFSafariViewController.init(url: authUrl!)
-        
-        self.present(self.authViewController!, animated: true, completion: nil)
-    }
 }

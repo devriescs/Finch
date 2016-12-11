@@ -45,5 +45,25 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb215801702201421</string>
+            </array>
+        </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>215801702201421</string>
+    <key>FacebookDisplayName</key>
+    <string>Finch</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>

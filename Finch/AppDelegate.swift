@@ -19,33 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        FIRApp.configure()
-        self.auth = SPTAuth.defaultInstance()
+        FIRApp.configure()
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 
         return true
     }
     
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         
-        if (self.auth?.canHandle(url))! {
-
-            self.auth?.handleAuthCallback(withTriggeredAuthURL: url, callback: { (error: Error?, session: SPTSession?) in
-                
-                if session != nil {
-                    print("Found a session")
-                    
-                    // Save the session?
-                    
-                    NotificationCenter.default.post(name: Notification.Name("handleSpotifyLogin"), object: nil)
-                    
-                }
-
-            })
-            
-            return true
-        }
-        
-        return false
+        let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

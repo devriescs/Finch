@@ -14,5 +14,7 @@
 #import <SafariServices/SafariServices.h>
 
 #import <Firebase/Firebase.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #endif /* Finch_Briding_Header_h */
