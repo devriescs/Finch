@@ -10,7 +10,20 @@ import Foundation
 import UIKit
 
 class LFRoomsViewController: UIViewController {
+    
+    var roomsRef: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.roomsRef = FIRDatabase.database().reference()
+        
+        self.roomsRef.observe(FIRDataEventType.childAdded, with: { (snapshot) -> Void in
+            print("Child added \(snapshot)")
+        })
+        
+        self.roomsRef.observe(FIRDataEventType.childRemoved, with: { (snapshot) -> Void in
+            print("Child removed \(snapshot)")
+        })
     }
 }

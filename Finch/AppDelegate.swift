@@ -36,7 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             let loginVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController")
-            self.window?.rootViewController = loginVC
+            let mainNavController = UINavigationController.init(rootViewController: loginVC)
+            self.window?.rootViewController = mainNavController
         }
         
         self.window?.makeKeyAndVisible()

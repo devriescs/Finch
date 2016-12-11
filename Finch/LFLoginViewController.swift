@@ -28,17 +28,25 @@ class LFLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     }
     
+    func showMainViewController() {
+        let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainViewController")
+        self.navigationController?.pushViewController(mainVC, animated: true)
+    }
+    
     /* MARK: Facebook login button delegate */
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
         let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-            // ...
+            
             if let error = error {
-                // ...
+                // Handle error
                 return
             }
+            
+            self.showMainViewController()
+            
         }
     }
 

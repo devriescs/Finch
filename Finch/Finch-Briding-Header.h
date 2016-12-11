@@ -16,5 +16,6 @@
 #import <Firebase/Firebase.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FTIndicator/FTIndicator.h>
 
 #endif /* Finch_Briding_Header_h */

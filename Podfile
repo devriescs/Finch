@@ -7,9 +7,12 @@ target 'Finch' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Database'
+
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
+pod 'FTIndicator'
 
 end
 

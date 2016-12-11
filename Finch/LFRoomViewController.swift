@@ -10,7 +10,16 @@ import Foundation
 import UIKit
 
 class LFRoomViewController: UIViewController {
+    
+    var roomRef: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.roomRef = FIRDatabase.database().reference()
+        
+        self.roomRef.observe(FIRDataEventType.childChanged, with: { (snapshot) -> Void in
+            // Song changed
+        })
     }
 }
